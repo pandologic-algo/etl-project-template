@@ -1,0 +1,22 @@
+# ENV #
+###################
+# .env
+
+# IDEA config files #
+###################
+.idea/
+
+# bytecode #
+############
+__pycache__/
+
+# vscode #
+############
+.vscode/
+.devcontainer/
+
+# Packages #
+############
+*.zip
+
+

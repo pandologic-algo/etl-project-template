@@ -1,0 +1,172 @@
+{
+    "Production": {
+        "flask_app_config": {
+            "host": "0.0.0.0",
+            "port": 5555,
+            "threaded": false
+        },
+        "scheduler_config": [
+            {
+                "resource": "ETLRun",
+                "task": "App Run",
+                "schedule":{
+                    "hour": 7
+                }
+                
+            }
+        ],
+        "etl_config": {
+
+        },
+        "reader_config": {
+
+        },
+        "writer_config": {
+
+        },
+        "logger_config": {
+            "logger": {
+                "logging_level": "INFO"
+            },
+            "handlers": [
+                {
+                    "type": "logging_stream_handler",
+                    "config": {
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "INFO"
+                    }
+                },
+                {
+                    "type": "logging_file_handler",
+                    "config": {
+                        "output_dir": "logs/error",
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "ERROR" 
+                    }
+                },
+                {
+                    "type": "logging_file_handler",
+                    "config": {
+                        "output_dir": "logs/info",
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "INFO" 
+                    }
+                },
+                {
+                    "type": "logging_logzio_handler",
+                    "config": {
+                        "url": "https://listener.logz.io:8071",
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "INFO",
+                        "debug_mode": false  
+                    }
+                    
+                }
+            ]   
+        }
+    },
+    "Staging": {
+        "flask_app_config": {
+            "host": "0.0.0.0",
+            "port": 5555,
+            "threaded": false
+        },
+        "scheduler_config": [
+            {
+                "resource": "ETLRun",
+                "task": "App Run",
+                "schedule":{
+                    "hour": 7
+                }
+            }
+        ],
+        "etl_config": {
+
+        },
+        "reader_config": {
+
+        },
+        "writer_config": {
+
+        },
+        "logger_config": {
+            "logger": {
+                "logging_level": "INFO"
+            },
+            "handlers": [
+                {
+                    "type": "logging_stream_handler",
+                    "config": {
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "INFO"
+                    }
+                },
+                {
+                    "type": "logging_file_handler",
+                    "config": {
+                        "output_dir": "logs/error",
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "ERROR" 
+                    }
+                },
+                {
+                    "type": "logging_file_handler",
+                    "config": {
+                        "output_dir": "logs/info",
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "INFO" 
+                    }
+                },
+                {
+                    "type": "logging_logzio_handler",
+                    "config": {
+                        "url": "https://listener.logz.io:8071",
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "INFO",
+                        "debug_mode": true  
+                    }
+                    
+                }
+            ]   
+        }
+    },
+    "Development": {
+        "flask_app_config": {
+            "host": "127.0.0.1",
+            "port": 5555,
+            "threaded": false
+        },
+        "scheduler_config": [
+            {
+                "resource": "ETLRun",
+                "task": "App Run",
+                "schedule":{
+                    "minute": "39-41"
+                }
+            }
+        ],
+        "etl_config": {
+            
+        },
+        "reader_config": {
+
+        },
+        "writer_config": {
+
+        },
+        "logger_config": {
+            "logger": {
+                "logging_level": "DEBUG"
+            },
+            "handlers": [
+                {
+                    "type": "logging_stream_handler",
+                    "config": {
+                        "log_format": "'%(asctime)s %(levelname)s %(message)s'",
+                        "logging_level": "INFO"
+                    }
+                }
+            ]   
+        }
+    }
+}

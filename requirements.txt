@@ -1,0 +1,6 @@
+apscheduler==3.6.3
+flask-restful==0.3.8
+logzio-python-handler==3.0.0
+requests==2.24.0
+python_dotenv==0.14.0
+slacker==0.14.0
